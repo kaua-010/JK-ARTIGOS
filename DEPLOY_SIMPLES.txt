@@ -1,0 +1,158 @@
+╔═══════════════════════════════════════════════════════════════╗
+║          🚀 GUIA VISUAL - DEPLOY SEU SITE NO VERCEL          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+OBJETIVO:
+  Colocar seu site online em https://seu-site.vercel.app
+
+TEMPO ESTIMADO: 5 minutos
+
+
+═══════════════════════════════════════════════════════════════
+PASSO 1: Fazer login no Vercel (uma única vez)
+═══════════════════════════════════════════════════════════════
+
+1. Abra PowerShell em "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"
+
+2. Cole este comando:
+   
+   vercel login
+
+3. Escolha "GitHub" (mais fácil):
+   
+   ? Log in to Vercel (Y/n)
+   Y
+   
+   ? Which login method would you like to use?
+   → GitHub (recomendado)
+
+4. Seu navegador abrirá automaticamente
+   
+5. Clique em "Authorize Vercel"
+
+6. Volte ao PowerShell
+   
+   ✓ Login concluído!
+
+
+═══════════════════════════════════════════════════════════════
+PASSO 2: Fazer Deploy (automático agora!)
+═══════════════════════════════════════════════════════════════
+
+1. No mesmo PowerShell, execute:
+
+   vercel --prod
+
+2. Responda as perguntas (aceite os padrões com ENTER):
+
+   ? Set up and deploy "~/TRABALHOS/JK-ARTIGOS"? (Y/n)
+   Y
+   
+   ? Which scope would you like to deploy to? 
+   [Seu nome ou conta]
+   
+   ? Link to existing project? (y/N)
+   N
+   
+   ? What's your project's name?
+   jk-store (ou outro nome que quiser)
+   
+   ? In which directory is your code located?
+   [Enter - "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"]
+
+3. Aguarde o deploy (2-3 minutos)
+
+4. Quando terminar, você verá algo como:
+   
+   ✓ Production Deployment Complete
+   ✓ Domains: https://jk-store.vercel.app
+   
+   🎉 PRONTO! Seu site está no ar!
+
+
+═══════════════════════════════════════════════════════════════
+PASSO 3: Obter o Link do Seu Site
+═══════════════════════════════════════════════════════════════
+
+O link aparecerá na tela acima, mas também pode:
+
+1. Abra: https://vercel.com/dashboard
+
+2. Faça login com GitHub
+
+3. Procure por "jk-store" (ou o nome que escolheu)
+
+4. Copie o link da "Production" 
+
+5. Compartilhe! 📱
+
+   ✓ Bio do Instagram
+   ✓ Stories
+   ✓ Posts
+   ✓ WhatsApp Status
+   ✓ Grupos
+
+
+═══════════════════════════════════════════════════════════════
+ALTERNATIVA: Se preferir sem CLI
+═══════════════════════════════════════════════════════════════
+
+1. Acesse: https://vercel.com/signup
+
+2. Faça uma conta (GitHub é mais rápido)
+
+3. Clique em "Add New Project"
+
+4. Selecione a pasta "JK-ARTIGOS"
+
+5. Clique "Deploy"
+
+6. Aguarde (2-3 minutos)
+
+7. Copie o link!
+
+
+═══════════════════════════════════════════════════════════════
+DÚVIDAS FREQUENTES
+═══════════════════════════════════════════════════════════════
+
+P: Preciso dar minha senha?
+R: Não! Usa GitHub ou Google para login (mais seguro).
+
+P: Quanto custa?
+R: Vercel Free é grátis até 100GB/mês (mais do que suficiente).
+
+P: Meu site está lento?
+R: CDN global do Vercel é rápido (igual Netflix/Uber).
+
+P: Dados do email/WhatsApp estão protegidos?
+R: Sim! Variáveis de ambiente do Vercel são criptografadas.
+
+P: Como faço atualizações depois?
+R: Atualize os arquivos locais e execute "vercel --prod" novamente.
+
+
+═══════════════════════════════════════════════════════════════
+RESULTADO FINAL
+═══════════════════════════════════════════════════════════════
+
+✅ Site online
+✅ Domínio profissional
+✅ E-mail automático
+✅ WhatsApp automático  
+✅ QR Code por pedido
+✅ Galeria de fotos
+✅ 100% responsivo
+
+Tudo pronto para vender! 🎉
+
+
+═══════════════════════════════════════════════════════════════
+PRÓXIMO PASSO
+═══════════════════════════════════════════════════════════════
+
+Abra PowerShell e execute:
+
+    vercel login
+
+[Todos os outros passos aparecem no terminal automaticamente]

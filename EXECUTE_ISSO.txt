@@ -1,0 +1,49 @@
+═══════════════════════════════════════════════════════════════════════
+                    🚀 EXECUTE ESTE COMANDO
+═══════════════════════════════════════════════════════════════════════
+
+Abra PowerShell em qualquer lugar e COPIE E COLE isto:
+
+    cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS" && powershell -ExecutionPolicy Bypass -File "deploy.ps1"
+
+Depois PRESSIONE ENTER
+
+═══════════════════════════════════════════════════════════════════════
+
+O que vai acontecer:
+
+  1️⃣ Script inicia
+  2️⃣ Verifica dependências
+  3️⃣ Seu navegador abre
+  4️⃣ Você clica em "Authorize Vercel" (automático)
+  5️⃣ Você volta ao PowerShell
+  6️⃣ Aguarda 2-3 minutos
+  7️⃣ ✅ SEU SITE ESTÁ ONLINE!
+
+═══════════════════════════════════════════════════════════════════════
+
+Tudo pronto! Seu site tem:
+
+✅ Estrutura completa
+✅ 8 produtos
+✅ 29 fotos (múltiplos ângulos)
+✅ Carrinho funcional
+✅ Checkout com CPF/Email
+✅ Integração WhatsApp
+✅ Integração Email
+✅ QR Code por pedido
+✅ Galeria profissional
+✅ 100% responsivo
+
+═══════════════════════════════════════════════════════════════════════
+
+Próximas etapas após deploy:
+
+1. Copie o link do seu site que aparece no terminalNOTA: Vai exigir que você clique em um botão de autorização no navegador
+Isso é NORMAL e SEGURO. É como fazer login no GitHub.
+
+Qualquer dúvida, consulte:
+  - DEPLOY_SIMPLES.txt (guia visual)
+  - COMECE_AQUI.md (documentação)
+
+═══════════════════════════════════════════════════════════════════════

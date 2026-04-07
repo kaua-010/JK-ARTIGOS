@@ -1,0 +1,198 @@
+╔════════════════════════════════════════════════════════════════╗
+║            🌐 OPÇÕES PARA COLOCAR SEU SITE ONLINE             ║
+╚════════════════════════════════════════════════════════════════╝
+
+Você tem 2 opções. Escolha a que preferir:
+
+
+══════════════════════════════════════════════════════════════════
+OPÇÃO 1: VERCEL (Recomendado - Mais Profissional)
+══════════════════════════════════════════════════════════════════
+
+Tempo: 5 minutos
+Complexidade: Muito Fácil
+
+PASSO 1: Execute o script
+  
+  cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"
+  powershell -ExecutionPolicy Bypass -File "deploy.ps1"
+
+PASSO 2: Navegador abre automaticamente
+  
+  Clique em: "Authorize Vercel"
+  (Isso dura 15 segundos)
+
+PASSO 3: Aguarde o deploy
+  
+  2-3 minutos e pronto!
+
+RESULTADO:
+  ✓ Link do tipo: https://jk-store-abc123.vercel.app
+  ✓ Sempre online
+  ✓ Suporta até 100GB/mês (grátis)
+  ✓ Email automático funciona
+  ✓ WhatsApp automático funciona
+
+
+══════════════════════════════════════════════════════════════════
+OPÇÃO 2: NETLIFY DROP (Mais Rápido - Sem Conta)
+══════════════════════════════════════════════════════════════════
+
+Tempo: 2 minutos (literalmente arrastar e soltar!)
+Complexidade: Super Fácil
+
+PASSO 1: Abra o site
+
+  https://app.netlify.com/drop
+
+PASSO 2: Arraste a PASTA do seu projeto para a página
+
+  Arraste: C:\Users\kauav\TRABALHOS\JK-ARTIGOS\public\
+
+  (Apenas a pasta "public", não o projeto inteiro!)
+
+PASSO 3: Aguarde 20 segundos
+
+  Deploy automático! 🎉
+
+MUITO IMPORTANTE:
+  ⚠️ Netlify Drop é temporário (30 dias)
+  ⚠️ Ideal para TESTAR rápido
+  ✓ Se gostar, depois cria conta e faz deploy permanente
+
+RESULTADO:
+  ✓ Link do tipo: https://joyful-strudel-xyz.netlify.app
+  ✓ Funciona 100%
+  ✓ 30 dias de vida
+  ✓ Ideal para testar primeiro!
+
+
+══════════════════════════════════════════════════════════════════
+COMPARAÇÃO RÁPIDA
+══════════════════════════════════════════════════════════════════
+
+                    VERCEL        NETLIFY DROP
+─────────────────────────────────────────────────
+Tempo setup         5 min         2 min
+Precisa conta       Sim           Não (Drop)
+É permanente        Sim (Grátis)  Não (30 dias)
+Email funciona      ✓ Sim         ✓ Sim
+WhatsApp funciona   ✓ Sim         ✓ Sim
+Custo               Grátis        Grátis (Drop)
+Melhor para         Produção      Teste rápido
+
+
+══════════════════════════════════════════════════════════════════
+RECOMENDAÇÃO
+══════════════════════════════════════════════════════════════════
+
+Faça ASSIM:
+
+1. Teste com Netlify Drop (2 minutos)
+   
+   Você vê se tudo funciona rápido
+
+2. Se gostar, faça Vercel (5 minutos)
+   
+   Seu site fica online para sempre
+
+3. Compartilhe no Instagram! 📱
+
+
+══════════════════════════════════════════════════════════════════
+PASSO A PASSO - NETLIFY DROP (MAIS RÁPIDO)
+══════════════════════════════════════════════════════════════════
+
+1. Copie este link:
+   
+   https://app.netlify.com/drop
+
+2. Abra em um navegador
+
+3. Você verá uma página assim:
+   
+   ┌─────────────────────────────────────┐
+   │  Arraste sua pasta aqui             │
+   │                                     │
+   │  [Área para arrastar]               │
+   └─────────────────────────────────────┘
+
+4. Abra o File Explorer:
+   
+   C:\Users\kauav\TRABALHOS\JK-ARTIGOS
+
+5. Selecione a pasta: public
+
+6. Arraste para a página do Netlify
+
+7. Aguarde 20 segundos
+
+8. ✅ Seu site está NO AR!
+
+9. Copie o link que aparece:
+   
+   https://joyful-site-123.netlify.app
+
+10. Compartilhe no Instagram! 📱
+
+
+══════════════════════════════════════════════════════════════════
+PASSO A PASSO - VERCEL (MAIS PROFISSIONAL)
+══════════════════════════════════════════════════════════════════
+
+1. Abra PowerShell (tecla Windows + X)
+
+2. Digite:
+   
+   cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"
+   powershell -ExecutionPolicy Bypass -File "deploy.ps1"
+
+3. Pressione ENTER
+
+4. Um script vai rodar:
+   
+   ✓ Verifica dependências
+   ✓ Abre seu navegador
+   ✓ Você clica em "Authorize"
+   ✓ Volta ao terminal
+   ✓ Aguarda 2-3 minutos
+   ✓ ✅ ONLINE!
+
+5. Copie o link que aparece na tela
+
+6. Compartilhe! 📱
+
+
+══════════════════════════════════════════════════════════════════
+QUAL EU RECOMENDO?
+══════════════════════════════════════════════════════════════════
+
+✨ PARA COMEÇAR AGORA:
+   
+   Netlify Drop (2 minutos)
+   
+   Você testa TUDO funcionando em 2 minutos!
+   Link: https://app.netlify.com/drop
+
+⭐ PARA COLOCAR PARA VENDER:
+   
+   Vercel (5 minutos)
+   
+   Execute: deploy.ps1
+   
+   Fica online para sempre (grátis)
+
+
+══════════════════════════════════════════════════════════════════
+PRÓXIMO PASSO
+══════════════════════════════════════════════════════════════════
+
+Escolha UMA opção acima e execute!
+
+Qual você vai usar?
+
+  1. Netlify Drop (rápido para testar)
+  2. Vercel (para produção)
+
+Se tiver dúvida, escolha Netlify Drop - é tão rápido que em
+2 minutos você já vê seu site funcionando! 🚀

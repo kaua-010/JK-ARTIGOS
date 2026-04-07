@@ -666,6 +666,7 @@ header {
   outline: none;
   transition: border-color 0.2s;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-input:focus {
