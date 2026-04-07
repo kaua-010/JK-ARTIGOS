@@ -1,0 +1,230 @@
+╔═══════════════════════════════════════════════════════════════╗
+║          📷 GUIA RÁPIDO - ADICIONAR FOTOS DOS PRODUTOS        ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🎯 OBJETIVO:
+Organizar as fotos por produto e renomeá-las para o site reconhecer.
+
+
+📂 PASSO 1: EXTRAIR O ZIP
+═══════════════════════════════════════════════════════════════
+
+Windows (PowerShell):
+  PS> cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS\public\images\bibles\"
+  PS> Expand-Archive "C:\Users\kauav\Downloads\fotos JK.zip" -DestinationPath .
+
+Resultado:
+  public/images/bibles/
+  ├── WhatsApp Image 2026-04-07 at 17.30.42 (1).jpeg
+  ├── WhatsApp Image 2026-04-07 at 17.30.42 (2).jpeg
+  ├── ...
+
+
+🔍 PASSO 2: IDENTIFICAR FOTOS DO MESMO PRODUTO
+═══════════════════════════════════════════════════════════════
+
+Abra a pasta com as imagens e veja:
+  - Procure por fotos similares (mesmo produto, ângulos diferentes)
+  - Agrupe as fotos do MESMO PRODUTO junto
+  - Use o paint/visualizador para confirmar
+
+Exemplo de agrupamento:
+  PRODUTO 1: Foto 1, Foto 2, Foto 3, Foto 4 (Bíblia Preta)
+  PRODUTO 2: Foto 5, Foto 6, Foto 7, Foto 8 (Bíblia Rosa)
+  PRODUTO 3: Foto 9, Foto 10, Foto 11 (Bíblia NVI)
+  ...
+
+
+✏️ PASSO 3: RENOMEAR FOTOS
+═══════════════════════════════════════════════════════════════
+
+Para cada PRODUTO, renomeie as 4 fotos assim:
+
+PADRÃO:
+  biblia-[COR]-1.jpg    ← Frente/principal
+  biblia-[COR]-2.jpg    ← Lateral/outro ângulo
+  biblia-[COR]-3.jpg    ← Aberta/interior
+  biblia-[COR]-4.jpg    ← Detalhe especial
+
+EXEMPLOS:
+
+Se tem fotos da Bíblia PRETA:
+  ✏️ Foto_preta_1.jpeg   → RENOMEAR PARA → biblia-preta-1.jpg
+  ✏️ Foto_preta_2.jpeg   → RENOMEAR PARA → biblia-preta-2.jpg
+  ✏️ Foto_preta_3.jpeg   → RENOMEAR PARA → biblia-preta-3.jpg
+  ✏️ Foto_preta_4.jpeg   → RENOMEAR PARA → biblia-preta-4.jpg
+
+Se tem fotos da Bíblia ROSA:
+  ✏️ Foto_rosa_1.jpeg    → RENOMEAR PARA → biblia-rosa-1.jpg
+  ✏️ Foto_rosa_2.jpeg    → RENOMEAR PARA → biblia-rosa-2.jpg
+  ✏️ Foto_rosa_3.jpeg    → RENOMEAR PARA → biblia-rosa-3.jpg
+  ✏️ Foto_rosa_4.jpeg    → RENOMEAR PARA → biblia-rosa-4.jpg
+
+
+📋 TABELA DE CORES/NOMES
+═══════════════════════════════════════════════════════════════
+
+ID  PRODUTO                        ARQUIVO          FOTOS
+──  ─────────────────────────────  ─────────────────  ─────
+1   Bíblia Preta Clássica          biblia-preta       4
+2   Bíblia NVI Estudo              biblia-nvi         4
+3   Bíblia Feminina Rosa           biblia-rosa        4
+4   Bíblia ARA Clássica            biblia-ara         4
+5   Bíblia Letra Gigante           biblia-gigante     4
+6   Bíblia KJF Dourada             biblia-dourada     4
+7   Bíblia NVI Compacta            biblia-compacta    4
+8   Bíblia Feminina Lilás          biblia-lilas       4
+
+
+🎬 PASSO 4: COMO RENOMEAR NO WINDOWS
+═══════════════════════════════════════════════════════════════
+
+MÉTODO 1 - Renomear uma por uma (mais fácil):
+
+1. Clique com direito na imagem
+2. Selecione "Renomear"
+3. Digite o novo nome
+4. Pressione ENTER
+5. Repetir para as próximas
+
+Exemplo:
+  WhatsApp Image 2026-04-07 at 17.30.42 (1).jpeg
+  → Clique direito → Renomear
+  → Digite: biblia-preta-1.jpg
+  → ENTER ✓
+
+
+MÉTODO 2 - Script automático (mais rápido):
+
+Se tem EXATAMENTE 32 imagens (8 produtos × 4 fotos):
+
+1. Abra PowerShell na pasta
+2. Cole este script:
+
+---
+$produtos = @(
+  "preta", "nvi", "rosa", "ara", "gigante", "dourada", "compacta", "lilas"
+)
+
+$arquivos = Get-ChildItem -Filter "*.jpeg" | Sort-Object
+
+$i = 0
+foreach ($arquivo in $arquivos) {
+  $produtoIdx = [math]::Floor($i / 4)
+  $fotoIdx = ($i % 4) + 1
+  $produto = $produtos[$produtoIdx]
+  
+  $novoNome = "biblia-$produto-$fotoIdx.jpg"
+  Rename-Item -Path $arquivo.FullName -NewName $novoNome
+  
+  Write-Host "$($arquivo.Name) → $novoNome"
+  $i++
+}
+---
+
+3. Pressione ENTER
+4. Pronto! Todas renomeadas! ✓
+
+
+📁 PASSO 5: VERIFICAR A PASTA
+═══════════════════════════════════════════════════════════════
+
+Resultado esperado:
+
+public/images/bibles/
+├── biblia-preta-1.jpg
+├── biblia-preta-2.jpg
+├── biblia-preta-3.jpg
+├── biblia-preta-4.jpg
+├── biblia-nvi-1.jpg
+├── biblia-nvi-2.jpg
+├── biblia-nvi-3.jpg
+├── biblia-nvi-4.jpg
+├── biblia-rosa-1.jpg
+├── biblia-rosa-2.jpg
+├── biblia-rosa-3.jpg
+├── biblia-rosa-4.jpg
+└── ... (mais produtos)
+
+
+🧪 PASSO 6: TESTAR NO SITE
+═══════════════════════════════════════════════════════════════
+
+1. Abra terminal na pasta do projeto:
+   cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"
+
+2. Se não rodou "npm install" ainda:
+   npm install
+
+3. Inicie o servidor:
+   npm run dev
+
+4. Acesse no navegador:
+   http://localhost:5000
+
+5. Clique em qualquer PRODUTO para ver a galeria de fotos!
+
+6. Teste:
+   ✓ Clique em um produto
+   ✓ Veja a galeria aparecer
+   ✓ Use setas para navegar
+   ✓ Clique nas miniaturas em baixo
+   ✓ Teste "Anterior" e "Próxima"
+
+
+🎯 ESTRUTURA FINAL
+═══════════════════════════════════════════════════════════════
+
+Seu site terá:
+
+1. Produto clicável na grid
+2. Galeria de fotos modal
+3. Navegação por setas (← →)
+4. Miniaturas em baixo
+5. Contador de fotos (1/4, 2/4, etc)
+6. Tudo responsivo no celular
+
+
+⏱️ RESUMO RÁPIDO
+═══════════════════════════════════════════════════════════════
+
+1. Extrair ZIP em public/images/bibles/
+2. Identificar fotos do mesmo produto
+3. Renomear: biblia-[cor]-[numero].jpg
+4. Verificar na pasta
+5. Testar: npm run dev
+6. Abrir http://localhost:5000
+7. Clicar em um produto
+8. Ver galeria funcionando! 🚀
+
+
+❓ DÚVIDAS
+═══════════════════════════════════════════════════════════════
+
+P: Quantas fotos preciso de cada produto?
+R: Mínimo 1, recomendado 4
+
+P: Qual extensão? .jpg, .jpeg, .png?
+R: Qualquer uma funciona (.jpg é melhor)
+
+P: Posso adicionar 5 fotos de um produto?
+R: Sim! Use biblia-preta-5.jpg, biblia-preta-6.jpg, etc
+
+P: A ordem das fotos importa?
+R: Sim! A ordem determinada qual aparece primeiro
+
+P: Não consegui renomear via script?
+R: Renomeie uma por uma com clique direito (mais lento mas funciona)
+
+
+🎉 PRÓXIMAS ETAPAS
+═══════════════════════════════════════════════════════════════
+
+Depois que fotos estiverem ok:
+
+1. Teste o site localmente
+2. Se estiver bom, faça deploy no Vercel
+3. Compartilhe o link no Instagram!
+
+
+Sucesso! 🚀

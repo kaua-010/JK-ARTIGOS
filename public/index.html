@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JK Store – Bíblias Sagradas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">JK</div>
+    JK Store
+  </div>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Carrinho <span class="cart-count" id="cartCount">0</span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ Bíblias Sagradas Exclusivas ✦</div>
+  <h1>Palavra Santa,<br><em>Beleza Única</em></h1>
+  <p>Bíblias de alta qualidade para presente ou uso pessoal. Pronta entrega e encomenda.</p>
+  <div class="hero-cta">
+    <a href="https://wa.me/5519971080410" class="btn-primary" target="_blank">📲 Falar no WhatsApp</a>
+    <button class="btn-secondary" onclick="document.getElementById('produtos').scrollIntoView()">Ver produtos</button>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProducts('all',this)">Todos</button>
+  <button class="filter-btn" onclick="filterProducts('kjf',this)">KJF / KJA</button>
+  <button class="filter-btn" onclick="filterProducts('nvi',this)">NVI</button>
+  <button class="filter-btn" onclick="filterProducts('ara',this)">ARA / ARC</button>
+  <button class="filter-btn" onclick="filterProducts('feminina',this)">Feminina</button>
+  <button class="filter-btn" onclick="filterProducts('gigante',this)">Letra Gigante</button>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="produtos">
+  <div class="section-title">📖 Nossos Produtos</div>
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- CART OVERLAY -->
+<div class="overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>Seu Carrinho</h2>
+    <button class="close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="empty-icon">🛍️</div>
+      <p>Seu carrinho está vazio</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Subtotal:</span>
+      <strong id="subtotal">R$ 0,00</strong>
+    </div>
+    <button class="checkout-btn" onclick="openCheckout()" id="checkoutBtn" disabled>Finalizar Pedido</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal" id="checkoutForm">
+    <h2>Finalizar Pedido</h2>
+    <p class="modal-sub">Complete o formulário para receber seu pedido</p>
+
+    <div class="form-group">
+      <label class="form-label">Nome Completo</label>
+      <input type="text" class="form-input" id="clientName" placeholder="Seu nome">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-input" id="clientEmail" placeholder="seu@email.com">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">WhatsApp</label>
+      <input type="tel" class="form-input" id="clientPhone" placeholder="(19) 97108-0410">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Endereço (Opcional)</label>
+      <input type="text" class="form-input" id="clientAddress" placeholder="Rua, número, complemento">
+    </div>
+
+    <!-- DELIVERY OPTIONS -->
+    <div class="form-group">
+      <label class="form-label">Opção de Entrega</label>
+      <div class="delivery-options">
+        <div class="delivery-opt selected" onclick="selectDelivery(this, 0)">
+          <div class="delivery-opt-icon">📦</div>
+          <div class="delivery-opt-name">Retirada</div>
+          <div class="delivery-opt-price">Grátis</div>
+        </div>
+        <div class="delivery-opt" onclick="selectDelivery(this, 15)">
+          <div class="delivery-opt-icon">🚗</div>
+          <div class="delivery-opt-name">Entrega</div>
+          <div class="delivery-opt-price">R$ 15,00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION OPTIONS -->
+    <div class="notif-section">
+      <div class="notif-title">Como deseja receber o link/QR Code?</div>
+      <div class="notif-options">
+        <div class="notif-opt selected" onclick="selectNotification(this, 'whatsapp')">
+          <div class="notif-opt-check"></div>
+          <div class="notif-opt-icon">💬</div>
+          <div>
+            <div class="notif-opt-label">WhatsApp</div>
+            <div class="notif-opt-desc">Receba o QR Code no WhatsApp</div>
+          </div>
+        </div>
+        <div class="notif-opt" onclick="selectNotification(this, 'email')">
+          <div class="notif-opt-check"></div>
+          <div class="notif-opt-icon">📧</div>
+          <div>
+            <div class="notif-opt-label">Email</div>
+            <div class="notif-opt-desc">Receba o link de pagamento por email</div>
+          </div>
+        </div>
+        <div class="notif-opt" onclick="selectNotification(this, 'both')">
+          <div class="notif-opt-check"></div>
+          <div class="notif-opt-icon">📲</div>
+          <div>
+            <div class="notif-opt-label">Ambos</div>
+            <div class="notif-opt-desc">Receba por WhatsApp e Email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="order-summary-box">
+      <div class="order-summary-title">Resumo do Pedido</div>
+      <div id="summaryItems"></div>
+      <div class="order-summary-item">
+        <span>Frete:</span>
+        <span id="shippingPrice">R$ 0,00</span>
+      </div>
+      <div class="order-summary-total">
+        <span>Total:</span>
+        <span class="total-val" id="totalPrice">R$ 0,00</span>
+      </div>
+    </div>
+
+    <button class="place-order-btn" onclick="submitOrder()">Confirmar Pedido</button>
+    <button class="btn-secondary" style="width:100%; margin-top:10px;" onclick="closeCheckout()">Cancelar</button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="success-overlay" id="successModal">
+  <div class="success-box">
+    <div class="success-icon">✨</div>
+    <h2>Pedido Confirmado!</h2>
+    <p>Seu pedido foi registrado com sucesso. Você receberá o QR Code em breve.</p>
+    <div class="success-order-num">Pedido #<span id="orderNumber">00001</span></div>
+    <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">
+      Enviando para WhatsApp e Email...
+    </div>
+    <div class="success-actions">
+      <button class="close-success" onclick="closeSuccess()">Voltar ao início</button>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/5519971080410" class="wpp-float" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.773.966-.949 1.165-.176.199-.352.223-.65.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.732 5.39 2.122 7.723l-2.258 6.253 6.785-2.172a9.847 9.847 0 004.101.988h.004c5.428 0 9.835-4.41 9.835-9.85 0-2.624-.675-5.195-1.955-7.466-1.28-2.27-3.093-4.278-5.156-5.637-2.063-1.36-4.448-2.061-6.928-2.061z"/>
+  </svg>
+</a>
+
+<!-- IMAGE GALLERY MODAL -->
+<div class="gallery-overlay" id="galleryOverlay" onclick="closeGallery(event)">
+  <div class="gallery-modal" onclick="event.stopPropagation()">
+    <button class="gallery-close" onclick="closeGallery()">✕</button>
+    
+    <div class="gallery-main">
+      <img id="galleryMainImage" src="" alt="Imagem do produto" class="gallery-main-image">
+      
+      <button class="gallery-arrow prev" onclick="prevImage()">❮</button>
+      <button class="gallery-arrow next" onclick="nextImage()">❯</button>
+    </div>
+
+    <div class="gallery-info">
+      <h3 id="galleryProductName"></h3>
+      <p id="galleryImageCounter"></p>
+    </div>
+
+    <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+  </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="footer-logo">JK Store</div>
+  <p>Bíblias Sagradas Exclusivas • Eng. Coelho/SP</p>
+  <p><a href="https://wa.me/5519971080410">📲 Entre em contato</a> • Email: contato@jkstore.com.br</p>
+  <p style="margin-top: 20px; font-size: 0.75rem;">© 2024 JK Store. Todos os direitos reservados.</p>
+</footer>
+
+<script src="products-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

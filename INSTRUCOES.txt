@@ -1,0 +1,201 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║            JK STORE - BÍBLIAS SAGRADAS E-COMMERCE              ║
+║                   Seu Site Profissional                         ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📁 ARQUIVOS DA SUA LOJA
+
+public/
+  ├─ index.html      → Página principal do site
+  ├─ styles.css      → Estilos (cores, layout)
+  └─ script.js       → Lógica do carrinho e checkout
+
+server/
+  ├─ server.js       → Servidor principal
+  ├─ routes/
+  │  ├─ orders.js    → Processamento de pedidos
+  │  └─ products.js  → Lista de produtos
+
+.env               → Suas configurações (EMAIL, WhatsApp)
+package.json       → Dependências do projeto
+
+
+🚀 COMO RODAR SEU SITE (PASSO A PASSO)
+
+PASSO 1: Abrir Terminal
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Windows: 
+  1. Clique em: Arquivo > Abrir terminal como administrador
+  OU Pressione: Win + R → cmd
+
+Mac/Linux:
+  1. Abra o Terminal
+
+
+PASSO 2: Navegar para a Pasta do Projeto
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Copie e cole no terminal:
+
+cd "C:\Users\kauav\TRABALHOS\JK-ARTIGOS"
+
+
+PASSO 3: Instalar Dependências
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm install
+
+⏳ Aguarde 2-5 minutos...
+
+
+PASSO 4: Configurar Email e WhatsApp
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra o arquivo .env com qualquer editor de texto
+2. Adicione seus dados:
+
+   a) EMAIL (Gmail):
+      - Acesse: https://myaccount.google.com/apppasswords
+      - Gere uma SENHA DE APLICATIVO
+      - Cole em SMTP_PASS no arquivo .env
+      
+   b) WHATSAPP (Twilio):
+      - Crie conta em: https://www.twilio.com
+      - Configure WhatsApp Sandbox
+      - Copie SID e TOKEN para o .env
+      
+   c) DADOS DA EMPRESA:
+      - COMPANY_WHATSAPP=(19)97108-0410
+      - COMPANY_EMAIL=seu-email@empresa.com
+
+
+PASSO 5: Rodar o Servidor
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+npm run dev
+
+Você verá algo como:
+  🚀 JK Store Backend rodando em http://localhost:5000
+  📖 Bíblias Sagradas - E-commerce com WhatsApp & Email
+
+
+PASSO 6: Acessar Seu Site
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra seu navegador (Chrome, Firefox, Safari, etc.)
+2. Digite: http://localhost:5000
+3. Pronto! Seu site está rodando! 🎉
+
+
+🧪 TESTAR A FUNCIONALIDADE
+
+1. Clique no botão + em qualquer produto
+2. Clique em 🛒 Carrinho
+3. Clique em "Finalizar Pedido"
+4. Preencha o formulário:
+   - Nome: Seu nome
+   - Email: seu-email@gmail.com (use o mesmo do Gmail)
+   - WhatsApp: (19) 97108-0410
+   - Entrega: Escolha uma opção
+   - Notificação: WhatsApp / Email / Ambos
+5. Clique em "Confirmar Pedido"
+
+✅ Resultado esperado:
+   - Um email será enviado para você com o QR Code
+   - Uma mensagem será enviada para o WhatsApp da empresa
+   - Tela de sucesso será exibida
+
+
+📱 COMPARTILHAR NO INSTAGRAM (Para Testar)
+
+Enquanto está rodando localmente:
+  http://localhost:5000
+
+Depois de fazer Deploy no Vercel:
+  https://seu-projeto.vercel.app
+
+Cole este link em:
+  ✓ Bio do Instagram
+  ✓ Stories
+  ✓ Posts
+  ✓ WhatsApp Status
+  ✓ Grupos do WhatsApp
+
+
+🌐 COMO COLOCAR NO AR (VERCEL)
+
+1. Crie conta em: https://vercel.com
+2. Clique em "Add New Project"
+3. Selecione a pasta JK-ARTIGOS
+4. Adicione as variáveis de ambiente (.env)
+5. Clique em "Deploy"
+6. Copie o link gerado (https://seu-projeto.vercel.app)
+7. Compartilhe! 🚀
+
+
+⚙️ CUSTOMIZAR SEU SITE
+
+Mudar Produtos:
+  - Abra: server/routes/products.js
+  - Procure por: { id: 1, name: '...'
+  - Edite nome, preço, descrição
+
+Mudar Cores:
+  - Abra: public/styles.css
+  - Procure por: :root {
+  - Mude: --gold, --dark, --text
+
+Mudar Número do WhatsApp:
+  - Abra: .env
+  - Mude: COMPANY_WHATSAPP
+
+
+❓ TROUBLESHOOTING
+
+Q: "Port 5000 already in use"
+A: Feche outras janelas do terminal OU use:
+   PORT=3000 npm run dev
+
+Q: "Cannot find module 'express'"
+A: Execute:
+   npm install
+
+Q: Email não está sendo enviado
+A: Certifique-se de:
+   1. Usar SENHA DE APLICATIVO (não sua senha normal)
+   2. Email correto em SMTP_USER
+   3. Habilitar "Apps menos seguros"
+
+Q: WhatsApp não está funcionando
+A: Configure TWILIO_ACCOUNT_SID e TWILIO_AUTH_TOKEN
+   Ou deixe em branco - funcionará localmente
+
+
+📞 SUPORTE
+
+WhatsApp: (19) 97108-0410
+Email: contato@jkstore.com.br
+
+Para mais detalhes:
+  - Leia: README.md
+  - Leia: SETUP_GUIDE.md
+  - Leia: QUICK_START.md
+
+
+🎯 PRÓXIMAS ETAPAS
+
+1. ✅ Seu site está rodando (localhost:5000)
+2. ⏳ Configure email e WhatsApp
+3. ⏳ Teste a funcionalidade
+4. ⏳ Customize produtos e cores
+5. ⏳ Faça Deploy no Vercel
+6. ⏳ Compartilhe no Instagram e WhatsApp
+
+Parabéns! Você tem um e-commerce profissional! 🎉
+
+═══════════════════════════════════════════════════════════════════
+                    Feito para JK Store com ❤️
+═══════════════════════════════════════════════════════════════════
